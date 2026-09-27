@@ -7,7 +7,8 @@ const TicketForm = ({ onClose, onAdd = () => { } }) => {
         name: "",
         email: "",
         subject: "",
-        message: "",
+        attachment: null,
+        description: "",
         created: "",
         status: "New",
     })
@@ -103,13 +104,13 @@ const TicketForm = ({ onClose, onAdd = () => { } }) => {
                     <label
                         htmlFor="message"
                         className="text-[12px] font-medium text-gray-700"
-                    >Message
+                    >Description
                     </label>
 
                     <textarea
                         id="message"
                         rows="3"
-                        name="message"
+                        name="description"
                         onChange={onChangeForm}
                         placeholder="Describe your issue or request..."
                         className="resize-none rounded-lg border border-gray-300 px-4 py-3 text-[12px] text-gray-800 outline-none transition placeholder:text-gray-400 focus:border-blue-500 focus:ring-2 focus:ring-blue-100"
@@ -129,6 +130,7 @@ const TicketForm = ({ onClose, onAdd = () => { } }) => {
                     <input
                         id="attachment"
                         type="file"
+                        name="attachment"
                         className="w-full cursor-pointer rounded-lg border border-dashed border-gray-300 px-4 py-3 text-[12px] text-gray-500 file:mr-4 file:rounded-md file:border-0 file:bg-green-600 file:hover:bg-green-700 file:px-4 file:py-2 file:font-medium file:text-white hover:border-blue-400 file:cursor-pointer"
                     />
 
